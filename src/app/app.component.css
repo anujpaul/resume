@@ -1,0 +1,11 @@
+.resume-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #f8f9fa; /* light gray */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
