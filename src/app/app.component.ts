@@ -20,5 +20,7 @@ export class AppComponent {
   
 }
 
+
+// ng build --configuration=production --base-href="/"
 // ng build --configuration=production --base-href "https://anujpaul.github.io/resume/"
 // ngh --dir=dist/resume/browser
