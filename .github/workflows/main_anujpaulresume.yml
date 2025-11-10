@@ -26,7 +26,7 @@ jobs:
       - name: npm install and build Angular
         run: |
           npm install
-          npm run build --configuration=production
+          ng build --configuration=production --base-href="/"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
