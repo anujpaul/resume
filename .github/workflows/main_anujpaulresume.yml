@@ -28,21 +28,21 @@ jobs:
           npm install
           npm run build --configuration=production --base-href="/"
 
-      - name: Debug - Check built files
-        run: |
-            echo "=== Checking build output ==="
-            echo "Current directory:"
-            pwd
-            echo "Dist folder contents:"
-            ls -la dist/ || echo "No dist folder"
-            echo "Resume folder contents:"
-            ls -la dist/resume/ || echo "No resume folder"
-            echo "Browser folder contents:"
-            ls -la dist/resume/browser/ || echo "No browser folder"
-            echo "File count in browser folder:"
-            find dist/resume/browser/ -type f 2>/dev/null | wc -l || echo "Cannot count files"
-            echo "Looking for index.html:"
-            find . -name "index.html" -type f 2>/dev/null | head -5 || echo "No index.html found"
+      # - name: Debug - Check built files
+      #   run: |
+      #       echo "=== Checking build output ==="
+      #       echo "Current directory:"
+      #       pwd
+      #       echo "Dist folder contents:"
+      #       ls -la dist/ || echo "No dist folder"
+      #       echo "Resume folder contents:"
+      #       ls -la dist/resume/ || echo "No resume folder"
+      #       echo "Browser folder contents:"
+      #       ls -la dist/resume/browser/ || echo "No browser folder"
+      #       echo "File count in browser folder:"
+      #       find dist/resume/browser/ -type f 2>/dev/null | wc -l || echo "Cannot count files"
+      #       echo "Looking for index.html:"
+      #       find . -name "index.html" -type f 2>/dev/null | head -5 || echo "No index.html found"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
