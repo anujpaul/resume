@@ -4,23 +4,22 @@ import { ExperienceComponent } from "../experience/experience.component";
 import { CommonModule } from '@angular/common';
 import { EducationComponent } from "../education/education.component";
 import { IntroComponent } from "../intro/intro.component";
+import { ChatComponent } from "../chat/chat.component";
 
 @Component({
   selector: 'app-resume',
   standalone: true,
   imports: [
-            AchievementsComponent, 
-            ExperienceComponent, 
-            CommonModule, 
-            EducationComponent, 
-            IntroComponent
-          ],
+    AchievementsComponent,
+    ExperienceComponent,
+    CommonModule,
+    EducationComponent,
+    IntroComponent
+],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.css'
 })
 export class ResumeComponent {
 
-  title = 'Anuj Paul';
-  phone = '608-616-9597'
-  email = 'anujpaulit@gmail.com'
+ 
 }

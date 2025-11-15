@@ -5,6 +5,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { FooterComponent } from './footer/footer.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { ChatComponent } from "./chat/chat.component";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { ExperienceComponent } from './experience/experience.component';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-  ],
+    ChatComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
