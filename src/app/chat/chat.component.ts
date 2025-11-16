@@ -29,7 +29,7 @@ export class ChatComponent implements OnInit {
   userName = '';
   
   private questions = [
-    "Hello! What's your name?",
+    "What's your name?",
     "Do you have any specific questions about my Resume?",
     "Sorry, my capabilities are limited as Anuj is still developing me"
   ];
