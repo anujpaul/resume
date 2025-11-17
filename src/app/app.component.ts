@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ChatComponent } from "./chat/chat.component";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',

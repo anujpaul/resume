@@ -1,12 +1,15 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild, ElementRef, HostListener, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ChatService } from '../service/chat.service';
 
 interface Message {
   text: string;
   isUser: boolean;
   timestamp: Date;
 }
+
+
 
 @Component({
   selector: 'app-chat',
@@ -27,6 +30,12 @@ export class ChatComponent implements OnInit {
   isMinimized = true;
   isExpanded = false;
   userName = '';
+
+  constructor(
+    private service:ChatService
+  ){
+
+  }
   
   private questions = [
     "What's your name?",
@@ -87,10 +96,24 @@ export class ChatComponent implements OnInit {
     if (this.currentQuestionIndex < this.questions.length) {
       setTimeout(() => {
         // if(userMessage = 'Anuj')
-          if (this.currentQuestionIndex == 1)
+        if (this.currentQuestionIndex == 1)
         {
           this.userName = userMessage;
-          this.addBotMessage('Nice to meet you '+ userMessage);
+          this.service.executeHellowWorld(userMessage).subscribe({
+            
+            next: (response) => this.addBotMessage('Nice to meet you '+ response.message),
+            error: (error) => {
+              this.addBotMessage("Ehhhh, something went wrong.")
+              console.log("Ehhhh, something went wrong.")
+            },
+            complete: () => {}
+              
+            
+            
+              
+            
+
+        }) ;
           this.addBotMessage(this.questions[this.currentQuestionIndex]);
         }
         else
