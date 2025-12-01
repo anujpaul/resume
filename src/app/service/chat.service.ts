@@ -29,7 +29,7 @@ export class ChatService {
 
     console.log(userMessage);
     return this.http.post<ChatResponse>(
-      `${this.baseUrl}/chat/hello`,
+      `${this.baseUrl}/chat/greet`,
       userMessage, 
       { headers }
     );
