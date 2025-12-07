@@ -101,7 +101,7 @@ export class ChatComponent implements OnInit {
           this.userName = userMessage;
           this.service.executeHellowWorld(userMessage).subscribe({
             
-            next: (response) => this.addBotMessage('Nice to meet you '+ response.message),
+            next: (response) => this.addBotMessage(response.message),
             error: (error) => {
               this.addBotMessage("Ehhhh, something went wrong.")
               console.log("Ehhhh, something went wrong.")
