@@ -2,6 +2,6 @@ export const environment = {
     production: true,
     // baseUrl: 'https://anujresumeservice.azurewebsites.net'
     baseUrl: 'https://app.azure-api.net',
-    apimSubscriptionKey: 'f87026826b4941338f3aba451d72ead0'
+    apimSubscriptionKey: 'ab80fa27aa0f459f999d885dc2bf33d9'
 
 };
