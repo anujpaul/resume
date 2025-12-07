@@ -22,7 +22,8 @@ export class ChatService {
   ) { }
 
   executeHellowWorld(userMessage:string){
-    
+    console.log("Calling Base URL : " + environment.baseUrl);
+    console.log("Sub Key : " +environment.apimSubscriptionKey);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Ocp-Apim-Subscription-Key':environment.apimSubscriptionKey
