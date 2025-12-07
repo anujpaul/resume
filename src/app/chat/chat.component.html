@@ -76,7 +76,8 @@
             rows="1"
             class="chat-input"
           ></textarea>
-          <button 
+          <button
+            type="button" 
             (click)="sendMessage()" 
             [disabled]="!userInput.trim()"
             class="send-button"

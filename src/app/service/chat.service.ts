@@ -24,10 +24,11 @@ export class ChatService {
   executeHellowWorld(userMessage:string){
     
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Ocp-Apim-Subscription-Key':environment.apimSubscriptionKey
       });
 
-    console.log(userMessage);
+    console.log("Execute Message : " +userMessage);
     return this.http.post<ChatResponse>(
       `${this.baseUrl}/chat/greet`,
       userMessage, 
