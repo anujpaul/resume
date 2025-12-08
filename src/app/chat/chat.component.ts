@@ -39,8 +39,7 @@ export class ChatComponent implements OnInit {
   
   private questions = [
     "What's your name?",
-    "Do you have any specific questions about my Resume?",
-    "Sorry, my capabilities are limited as Anuj is still developing me"
+    "Do you have any specific questions about my Resume?"
   ];
   
   private currentQuestionIndex = 0;
@@ -91,42 +90,48 @@ export class ChatComponent implements OnInit {
   }
 
   private processUserResponse(userMessage: string) {
-    this.currentQuestionIndex++;
-    
-    if (this.currentQuestionIndex < this.questions.length) {
-      setTimeout(() => {
-        // if(userMessage = 'Anuj')
-        if (this.currentQuestionIndex == 1)
-        {
-          this.userName = userMessage;
-          this.service.executeHellowWorld(userMessage).subscribe({
-            
-            next: (response) => this.addBotMessage(response.message),
-            error: (error) => {
-              this.addBotMessage("Ehhhh, something went wrong.")
-              console.log("Ehhhh, something went wrong.")
-            },
-            complete: () => {}
-              
-            
-            
-              
-            
 
-        }) ;
+    // ✅ STEP 1: NAME STEP → Call GREET API
+    if (this.currentQuestionIndex === 0) {
+  
+      this.userName = userMessage;
+  
+      this.service.greet(userMessage).subscribe({
+        next: (response) => {
+          // ✅ Show greeting first
+          this.addBotMessage(response.message);
+  
+          // ✅ Then move to next question
+          this.currentQuestionIndex = 1;
           this.addBotMessage(this.questions[this.currentQuestionIndex]);
+        },
+        error: () => {
+          this.addBotMessage("Ehhhh, something went wrong.");
         }
-        else
-        {
-          this.addBotMessage(this.questions[this.currentQuestionIndex]);
-        }
-      }, 500);
-    } else {
-      setTimeout(() => {
-        this.addBotMessage("Thank you for the conversation!");
-      }, 500);
+      });
+  
+      return; // ✅ STOP EXECUTION HERE
     }
+  
+    // ✅ STEP 2: RESUME QUESTION STEP
+    if (this.currentQuestionIndex === 1) {
+  
+      this.service.resumeQuestion(userMessage).subscribe({
+        next: (response) => {
+          this.addBotMessage(response.message);
+        },
+        error: () => {
+          this.addBotMessage("Ehhhh, something went wrong.");
+        }
+      });
+  
+      return; // ✅ STOP EXECUTION HERE
+    }
+  
+    // ✅ FINAL FALLBACK
+    this.addBotMessage("Thank you for the conversation!");
   }
+  
 
   private addUserMessage(text: string) {
     this.messages.push({
