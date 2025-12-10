@@ -51,7 +51,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     // Initial greeting when component loads (but minimized)
-    this.addBotMessage("Hello! I'm AI assistant. Chat code was completed generated using AI and still Dev is in progress.");
+    this.addBotMessage("Hello! I'm Anuj's AI assistant. Please note that first Response will be slow because I am using free web app.");
   }
 
   toggleChat() {

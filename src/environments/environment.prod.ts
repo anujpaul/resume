@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     // baseUrl: 'https://anujresumeservice.azurewebsites.net'
     //baseUrl: 'http://localhost:8085',
     baseUrl: 'https://app.azure-api.net',
