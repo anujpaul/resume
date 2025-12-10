@@ -23,7 +23,7 @@ export class ChatService {
 
   greet(userMessage:string){
     console.log("Calling Base URL - " + environment.baseUrl);
-    console.log("Sub Key : " +environment.apimSubscriptionKey);
+    // console.log("Sub Key : " +environment.apimSubscriptionKey);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Ocp-Apim-Subscription-Key':environment.apimSubscriptionKey
@@ -39,7 +39,7 @@ export class ChatService {
 
   resumeQuestion(userMessage:string){
     console.log("Calling Base URL - " + environment.baseUrl);
-    console.log("Sub Key : " +environment.apimSubscriptionKey);
+    // console.log("Sub Key : " +environment.apimSubscriptionKey);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Ocp-Apim-Subscription-Key':environment.apimSubscriptionKey
